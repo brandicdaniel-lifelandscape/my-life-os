@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Landscape</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Personal Life Operating System</p>
+      <h1>Life Landscape</h1>
+    </div>
+    <div class="actions">
+      <button id="seasonButton">Change season</button>
+      <button id="resetButton" class="secondary">Reset demo data</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">North Star</p>
+        <h2 contenteditable="true" data-key="northStarTitle">Creating spaces where people reconnect with themselves.</h2>
+        <p contenteditable="true" data-key="northStarBody">A spacious, creative, financially secure life where Camp, therapy, health, relationships, and joy all grow from the same root.</p>
+      </div>
+      <div class="season-badge" id="seasonBadge">Spring</div>
+    </section>
+
+    <section class="layout">
+      <aside class="panel">
+        <p class="eyebrow">This week</p>
+        <h3 contenteditable="true" data-key="weeklyFocusTitle">Most Important Moves</h3>
+        <ul id="weeklyList"></ul>
+        <button id="addWeekly">+ Add weekly move</button>
+      </aside>
+
+      <section class="tree-wrap" aria-label="Visual life tree">
+        <div class="tree-center">
+          <span>ME</span>
+          <small>becoming</small>
+        </div>
+        <div id="branches"></div>
+      </section>
+
+      <aside class="panel">
+        <p class="eyebrow">Seasonal question</p>
+        <h3 id="seasonQuestion">What am I growing?</h3>
+        <textarea id="seasonNotes" placeholder="Write what this season is asking of you..."></textarea>
+      </aside>
+    </section>
+
+    <section class="horizons">
+      <article><span>Trail</span><strong>This Week</strong><p>Small actions. No overwhelm.</p></article>
+      <article><span>Forest</span><strong>This Quarter</strong><p>Projects, experiments, and decisions.</p></article>
+      <article><span>Mountain</span><strong>1–10 Years</strong><p>The life you are building toward.</p></article>
+    </section>
+  </main>
+
+  <dialog id="branchDialog">
+    <form method="dialog" class="dialog-card">
+      <button class="close" value="cancel">×</button>
+      <p class="eyebrow" id="dialogPillar">Pillar</p>
+      <h2 id="dialogTitle"></h2>
+      <label>Purpose / why this matters</label>
+      <textarea id="branchPurpose"></textarea>
+      <label>Current projects</label>
+      <textarea id="branchProjects"></textarea>
+      <label>Milestones / growth markers</label>
+      <textarea id="branchMilestones"></textarea>
+      <label>Notes / journal</label>
+      <textarea id="branchNotes"></textarea>
+      <button id="saveBranch" value="default">Save</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

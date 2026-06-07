@@ -1,77 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life Landscape</title>
+  <title>The Garden | Personal Life Operating System</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div>
       <p class="eyebrow">Personal Life Operating System</p>
-      <h1>Life Landscape</h1>
+      <h1>The Garden</h1>
+      <p class="tagline">Tend yourself. Tend your garden.</p>
     </div>
-    <div class="actions">
-      <button id="seasonButton">Change season</button>
-      <button id="resetButton" class="secondary">Reset demo data</button>
+    <div class="top-actions">
+      <button id="seasonBtn">Change season</button>
+      <button id="resetBtn" class="ghost">Reset demo data</button>
     </div>
   </header>
 
   <main>
-    <section class="hero-card">
+    <section class="hero card">
       <div>
-        <p class="eyebrow">North Star</p>
-        <h2 contenteditable="true" data-key="northStarTitle">Creating spaces where people reconnect with themselves.</h2>
-        <p contenteditable="true" data-key="northStarBody">A spacious, creative, financially secure life where Camp, therapy, health, relationships, and joy all grow from the same root.</p>
+        <p class="eyebrow">Core Principle</p>
+        <h2>Care for what matters without abandoning yourself.</h2>
+        <p class="hero-copy">The goal is not to become someone else. The goal is to reconnect with the brightest version of you and let that brightness expand into your work, relationships, wealth, creativity, and legacy.</p>
       </div>
-      <div class="season-badge" id="seasonBadge">Spring</div>
+      <div class="season-orb">
+        <span id="seasonName">Summer</span>
+        <small id="seasonQuestion">What am I expanding?</small>
+      </div>
     </section>
 
-    <section class="layout">
-      <aside class="panel">
-        <p class="eyebrow">This week</p>
-        <h3 contenteditable="true" data-key="weeklyFocusTitle">Most Important Moves</h3>
-        <ul id="weeklyList"></ul>
-        <button id="addWeekly">+ Add weekly move</button>
-      </aside>
+    <section class="grid two">
+      <article class="card north-star">
+        <p class="eyebrow">North Star</p>
+        <textarea data-key="northStar">To help people reconnect with the brightest version of themselves while continuously reconnecting with my own.</textarea>
+      </article>
+      <article class="card future-life">
+        <p class="eyebrow">10-Year Vision</p>
+        <textarea data-key="tenYearVision">Private therapy clients, multiple Camps, a successful cookbook, a continuing dinner party series, a thriving tribe, speaking engagements, financial freedom, additional homes, international travel, and time for sewing.</textarea>
+      </article>
+    </section>
 
-      <section class="tree-wrap" aria-label="Visual life tree">
-        <div class="tree-center">
-          <span>ME</span>
-          <small>becoming</small>
+    <section class="garden-map card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">The Living Areas</p>
+          <h2>Your Garden Map</h2>
         </div>
-        <div id="branches"></div>
-      </section>
-
-      <aside class="panel">
-        <p class="eyebrow">Seasonal question</p>
-        <h3 id="seasonQuestion">What am I growing?</h3>
-        <textarea id="seasonNotes" placeholder="Write what this season is asking of you..."></textarea>
-      </aside>
+        <p class="hint">Tap a garden bed to open its notes.</p>
+      </div>
+      <div class="beds" id="beds"></div>
     </section>
 
-    <section class="horizons">
-      <article><span>Trail</span><strong>This Week</strong><p>Small actions. No overwhelm.</p></article>
-      <article><span>Forest</span><strong>This Quarter</strong><p>Projects, experiments, and decisions.</p></article>
-      <article><span>Mountain</span><strong>1–10 Years</strong><p>The life you are building toward.</p></article>
+    <section class="grid two">
+      <article class="card weekly">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Trail View</p>
+            <h2>This Week's Five Moves</h2>
+          </div>
+          <button id="addMove">+ Add move</button>
+        </div>
+        <div id="movesList" class="moves"></div>
+      </article>
+
+      <article class="card alignment">
+        <p class="eyebrow">Compass</p>
+        <h2>Monthly Alignment</h2>
+        <p class="hint">Rate 1–10. The goal is alignment, not perfection.</p>
+        <div id="alignmentList"></div>
+      </article>
+    </section>
+
+    <section class="grid three">
+      <article class="card risk">
+        <p class="eyebrow">Risk #1</p>
+        <h3>Dreaming Without Building</h3>
+        <p>Warning sign: talking, researching, or refining without shipping.</p>
+        <label>Weekly question</label>
+        <textarea data-key="risk1">What did I actually create this week?</textarea>
+      </article>
+      <article class="card risk">
+        <p class="eyebrow">Risk #2</p>
+        <h3>Luxury Before Sustainability</h3>
+        <p>Warning sign: making the experience more beautiful than financially viable.</p>
+        <label>Weekly question</label>
+        <textarea data-key="risk2">What is the simplest version that still feels aligned?</textarea>
+      </article>
+      <article class="card risk">
+        <p class="eyebrow">Risk #3</p>
+        <h3>One Garden Bed Obsession</h3>
+        <p>Warning sign: one area gets all the water while other real priorities dry out.</p>
+        <label>Weekly question</label>
+        <textarea data-key="risk3">What important area has received no attention lately?</textarea>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card light-page">
+        <p class="eyebrow">The Light</p>
+        <h2>Weekly Light Check</h2>
+        <label>What gave me light?</label>
+        <textarea data-key="gaveLight">Meaningful conversations, hosting, building Camp, learning, travel, cooking, sewing.</textarea>
+        <label>What dimmed my light?</label>
+        <textarea data-key="dimmedLight">Overwork, urgency, misaligned obligations, trying to prove instead of create.</textarea>
+        <label>What wants more light?</label>
+        <textarea data-key="moreLight">The parts of my life that connect people in person and support people in private.</textarea>
+      </article>
+
+      <article class="card questions">
+        <p class="eyebrow">Permanent Page</p>
+        <h2>Questions I'm Living</h2>
+        <div id="questionsList"></div>
+        <button id="addQuestion">+ Add question</button>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card lessons">
+        <p class="eyebrow">Future TED Talk / Book Seeds</p>
+        <h2>Lessons From The Garden</h2>
+        <textarea data-key="lessons">How to tend your garden without abandoning yourself. Add lessons here as they become true through lived experience.</textarea>
+      </article>
+      <article class="card decision">
+        <p class="eyebrow">Decision Filter</p>
+        <h2>Before I Say Yes</h2>
+        <ul>
+          <li>Does this increase purpose?</li>
+          <li>Does this increase freedom?</li>
+          <li>Does this protect health?</li>
+          <li>Does this deepen connection?</li>
+          <li>Does this create joy?</li>
+          <li>Does this build wealth without status obsession?</li>
+        </ul>
+        <textarea data-key="decisionNotes">Use this space to score major choices: jobs, schools, investments, retreats, relationships, speaking opportunities.</textarea>
+      </article>
     </section>
   </main>
 
-  <dialog id="branchDialog">
-    <form method="dialog" class="dialog-card">
+  <dialog id="bedDialog">
+    <form method="dialog" class="modal">
       <button class="close" value="cancel">×</button>
-      <p class="eyebrow" id="dialogPillar">Pillar</p>
-      <h2 id="dialogTitle"></h2>
-      <label>Purpose / why this matters</label>
-      <textarea id="branchPurpose"></textarea>
-      <label>Current projects</label>
-      <textarea id="branchProjects"></textarea>
-      <label>Milestones / growth markers</label>
-      <textarea id="branchMilestones"></textarea>
-      <label>Notes / journal</label>
-      <textarea id="branchNotes"></textarea>
-      <button id="saveBranch" value="default">Save</button>
+      <p class="eyebrow" id="modalEyebrow">Garden Bed</p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalQuestion" class="modal-question"></p>
+      <textarea id="modalNotes"></textarea>
+      <button id="saveBed" value="default">Save notes</button>
     </form>
   </dialog>
 

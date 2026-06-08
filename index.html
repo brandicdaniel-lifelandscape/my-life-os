@@ -3,69 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tend | The Garden</title>
+  <title>Tend | The Garden of Becoming</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <p class="eyebrow">The Garden of Becoming</p>
-      <h1>Tend</h1>
-      <p class="tagline">A botanical field journal for tending the life you are becoming.</p>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">The Garden of Becoming</p>
+        <h1>Tend</h1>
+        <p class="subtitle">Tend yourself. Tend your garden.</p>
+      </div>
+      <button id="seasonBtn" class="pill">Summer — What am I expanding?</button>
+    </header>
 
-      <nav class="quick-nav">
-        <a href="#today">Today</a>
-        <a href="#garden">Garden</a>
-        <a href="#archive">Archive</a>
-        <a href="#questions">Questions</a>
-      </nav>
+    <section class="estate-card">
+      <div class="sky-orb"></div>
+      <div class="estate">
+        <button class="estate-node legacy" data-area="Legacy">
+          <span class="visual" id="visual-Legacy">🌰</span>
+          <strong>Legacy Forest</strong>
+          <small id="count-Legacy">0 saved</small>
+        </button>
+
+        <button class="estate-node freedom" data-area="Freedom">
+          <span class="visual" id="visual-Freedom">⛰️</span>
+          <strong>Freedom Trail</strong>
+          <small id="count-Freedom">0 saved</small>
+        </button>
+
+        <button class="estate-node purpose" data-area="Purpose">
+          <span class="visual" id="visual-Purpose">🌰</span>
+          <strong>Purpose Tree</strong>
+          <small id="count-Purpose">0 saved</small>
+        </button>
+
+        <button class="estate-node creation" data-area="Creation">
+          <span class="visual" id="visual-Creation">🌰</span>
+          <strong>Creation Garden</strong>
+          <small id="count-Creation">0 saved</small>
+        </button>
+
+        <button class="estate-node tribe" data-area="Tribe">
+          <span class="visual" id="visual-Tribe">🌰</span>
+          <strong>Tribe Paths</strong>
+          <small id="count-Tribe">0 saved</small>
+        </button>
+
+        <button class="estate-node self selected" data-area="Self">
+          <span class="visual" id="visual-Self">🌰</span>
+          <strong>Self Roots</strong>
+          <small id="count-Self">0 saved</small>
+        </button>
+
+        <div class="home">
+          <span>🏡</span>
+          <b>ME</b>
+          <small>becoming</small>
+        </div>
+      </div>
+      <p class="hint">Tap an area to tend it. The landscape grows as you save entries.</p>
     </section>
 
-    <section id="today" class="panel">
-      <p class="season">Summer — What am I expanding?</p>
-      <h2>What needs tending today?</h2>
-      <p class="helper">Choose one area, write honestly, then save it. Your entry will move into the archive below.</p>
-
-      <div class="area-picker" id="areaPicker">
-        <button data-area="Self">🌱 Self</button>
-        <button data-area="Purpose">🌳 Purpose</button>
-        <button data-area="Creation">🌸 Creation</button>
-        <button data-area="Tribe">🤝 Tribe</button>
-        <button data-area="Freedom">🏔 Freedom</button>
-        <button data-area="Legacy">🌲 Legacy</button>
+    <section class="panel today">
+      <div class="section-title">
+        <p class="eyebrow">Today’s Tending</p>
+        <h2 id="todayTitle">Self Roots</h2>
       </div>
 
-      <textarea id="reflectionText" placeholder="What feels alive? What feels neglected? What would make tomorrow easier?"></textarea>
+      <div class="prompt-box">
+        <p id="dailyPrompt">What is your body, energy, or inner voice asking for today?</p>
+      </div>
 
-      <div class="actions">
-        <button id="saveEntry">Save Entry</button>
-        <button id="exportEntries" class="secondary">Export Backup</button>
+      <textarea id="entryText" placeholder="Write honestly. What feels alive? What feels neglected? What is one small tending move?"></textarea>
+
+      <div class="button-row">
+        <button id="saveBtn" class="primary">Save Entry</button>
+        <button id="suggestBtn" class="secondary">Suggest 3 Areas</button>
+        <button id="exportBtn" class="secondary">Export Backup</button>
       </div>
     </section>
 
-    <section id="garden" class="garden-section">
-      <h2>Your Living Garden</h2>
-      <p class="helper">Each area becomes richer as you save reflections.</p>
-
-      <div class="garden-grid" id="gardenGrid"></div>
+    <section class="panel suggested" id="suggestedPanel">
+      <p class="eyebrow">Arrive Here</p>
+      <h2>Today, tend 2–3 areas</h2>
+      <div class="suggestions" id="suggestions"></div>
     </section>
 
-    <section id="archive" class="panel">
-      <h2>Your Garden Archive</h2>
-      <p class="helper">Saved entries appear here. They are stored in this browser on this device.</p>
-      <div id="archiveList" class="archive-list"></div>
+    <section class="panel">
+      <p class="eyebrow">The Firepit</p>
+      <h2>Questions I’m Living</h2>
+      <div class="questions">
+        <div>How do I leave corporate America intentionally?</div>
+        <div>What can Amazon still teach me before I leave?</div>
+        <div>What is the smallest profitable Camp?</div>
+        <div>How can Camp support me through school?</div>
+        <div>What kind of therapist am I becoming?</div>
+        <div>How do I attract partnership without chasing it?</div>
+      </div>
     </section>
 
-    <section id="questions" class="panel firepit">
-      <h2>The Firepit</h2>
-      <p class="helper">Questions you are living, not problems to solve overnight.</p>
-      <ul>
-        <li>How do I leave corporate America intentionally?</li>
-        <li>How do I build Camp without losing its essence?</li>
-        <li>What kind of therapist am I becoming?</li>
-        <li>How do I attract partnership without chasing it?</li>
-        <li>How do I create meaningful community I can rely on?</li>
-      </ul>
+    <section class="panel archive-panel">
+      <div class="section-title archive-title">
+        <div>
+          <p class="eyebrow">Archive</p>
+          <h2>Saved Tending</h2>
+        </div>
+        <button id="clearBtn" class="danger">Clear All</button>
+      </div>
+      <div id="archive" class="archive"></div>
     </section>
   </main>
 

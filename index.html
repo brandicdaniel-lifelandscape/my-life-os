@@ -1,33 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tend</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tend | The Garden</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="hero">
-<h1>Tend</h1>
-<p class="tag">A place for thoughtful people to tend the lives they are becoming.</p>
-<div class="prompt">
-<h2>What needs tending today?</h2>
-<textarea placeholder="What feels alive? What feels neglected?"></textarea>
-</div>
-</div>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">The Garden of Becoming</p>
+      <h1>Tend</h1>
+      <p class="tagline">A botanical field journal for tending the life you are becoming.</p>
 
-<div class="landscape">
-<div class="card">🌱 Self<br><small>Magnolia Roots</small></div>
-<div class="card">🌳 Purpose<br><small>Oak Tree</small></div>
-<div class="card">🌸 Creation<br><small>Wildflower Garden</small></div>
-<div class="card">🤝 Tribe<br><small>Climbing Vine</small></div>
-<div class="card">🏔 Freedom<br><small>Mountain Trail</small></div>
-<div class="card">🌲 Legacy<br><small>Forest Canopy</small></div>
-</div>
+      <nav class="quick-nav">
+        <a href="#today">Today</a>
+        <a href="#garden">Garden</a>
+        <a href="#archive">Archive</a>
+        <a href="#questions">Questions</a>
+      </nav>
+    </section>
 
-<button id="save">Save Reflection</button>
-<div id="entries"></div>
+    <section id="today" class="panel">
+      <p class="season">Summer — What am I expanding?</p>
+      <h2>What needs tending today?</h2>
+      <p class="helper">Choose one area, write honestly, then save it. Your entry will move into the archive below.</p>
 
-<script src="app.js"></script>
+      <div class="area-picker" id="areaPicker">
+        <button data-area="Self">🌱 Self</button>
+        <button data-area="Purpose">🌳 Purpose</button>
+        <button data-area="Creation">🌸 Creation</button>
+        <button data-area="Tribe">🤝 Tribe</button>
+        <button data-area="Freedom">🏔 Freedom</button>
+        <button data-area="Legacy">🌲 Legacy</button>
+      </div>
+
+      <textarea id="reflectionText" placeholder="What feels alive? What feels neglected? What would make tomorrow easier?"></textarea>
+
+      <div class="actions">
+        <button id="saveEntry">Save Entry</button>
+        <button id="exportEntries" class="secondary">Export Backup</button>
+      </div>
+    </section>
+
+    <section id="garden" class="garden-section">
+      <h2>Your Living Garden</h2>
+      <p class="helper">Each area becomes richer as you save reflections.</p>
+
+      <div class="garden-grid" id="gardenGrid"></div>
+    </section>
+
+    <section id="archive" class="panel">
+      <h2>Your Garden Archive</h2>
+      <p class="helper">Saved entries appear here. They are stored in this browser on this device.</p>
+      <div id="archiveList" class="archive-list"></div>
+    </section>
+
+    <section id="questions" class="panel firepit">
+      <h2>The Firepit</h2>
+      <p class="helper">Questions you are living, not problems to solve overnight.</p>
+      <ul>
+        <li>How do I leave corporate America intentionally?</li>
+        <li>How do I build Camp without losing its essence?</li>
+        <li>What kind of therapist am I becoming?</li>
+        <li>How do I attract partnership without chasing it?</li>
+        <li>How do I create meaningful community I can rely on?</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>

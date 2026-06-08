@@ -26,3 +26,15 @@ textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:
 .moves,.questions #questionsList{display:grid;gap:.7rem}.move,.question{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.6rem;padding:.7rem;border:1px solid var(--line);border-radius:16px;background:#fffdf8}.move input[type=text],.question input{width:100%;border:0;background:transparent;font:1rem system-ui;color:var(--ink);outline:none}.delete{background:transparent;color:var(--muted);box-shadow:none;padding:.25rem}.alignment-row{display:grid;grid-template-columns:100px 1fr 38px;align-items:center;gap:.7rem;margin:.8rem 0}.alignment-row input{width:100%}ul{line-height:1.9;color:var(--muted);padding-left:1.2rem}dialog{border:0;border-radius:28px;padding:0;background:transparent;max-width:720px;width:92vw}.modal{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:1.4rem;box-shadow:var(--shadow)}.modal textarea{min-height:300px}.close{float:right;background:transparent;color:var(--ink);box-shadow:none;font-size:1.5rem;padding:.2rem .5rem}.modal-question{color:var(--muted);font-style:italic}
 @media (max-width:900px){.hero,.two,.three{grid-template-columns:1fr}.beds{grid-template-columns:repeat(2,1fr)}.topbar{align-items:flex-start;flex-direction:column}.season-orb{width:180px;height:180px}.bed{border-radius:28px;min-height:170px}}
 @media (max-width:520px){.beds{grid-template-columns:1fr}main{padding:.8rem}.card{padding:1rem}.topbar{padding:1rem}}
+
+
+.entry-actions{display:flex;justify-content:flex-end;gap:.5rem;margin:.55rem 0 1rem}
+.save-entry{background:var(--accent2);padding:.6rem .9rem;font-size:.92rem}
+.saved-entries{display:grid;gap:.65rem;margin-top:.75rem}
+.saved-entry{border:1px solid var(--line);background:#fffdf8;border-radius:16px;padding:.8rem;display:grid;gap:.45rem}
+.saved-entry header{display:flex;justify-content:space-between;gap:.75rem;align-items:center}
+.saved-entry time{font:700 .72rem system-ui,-apple-system,sans-serif;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.saved-entry p{margin:0;white-space:pre-wrap;font:1rem/1.45 system-ui,-apple-system,sans-serif;color:var(--ink)}
+.saved-entry .delete-entry{background:transparent;color:var(--muted);box-shadow:none;padding:.15rem .45rem;font-size:1.1rem}
+textarea.entry-input{min-height:90px}
+.modal .saved-entries{max-height:280px;overflow:auto;padding-right:.2rem}

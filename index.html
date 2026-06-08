@@ -1,74 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Estate</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Garden | Life Operating System</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="sky">
-  <h1>Tend</h1>
-  <p class="subtitle">The Garden of Becoming</p>
-</div>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Personal Life Operating System</p>
+        <h1>The Garden</h1>
+        <p class="tagline">Tend yourself. Tend your garden.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="dailyPromptBtn" class="primary">Today's Prompts</button>
+        <button id="exportBtn" class="secondary">Export Backup</button>
+      </div>
+    </header>
 
-<section class="scene forest">
-  <div class="label">LEGACY</div>
-  <h2>🌲 Legacy Forest</h2>
-  <p>What survives me?</p>
-</section>
+    <section class="north-star card">
+      <h2>North Star</h2>
+      <p>Help people reconnect with the brightest version of themselves while continuously reconnecting with my own.</p>
+      <p class="soft">A life where healing, creativity, community, wealth, and freedom reinforce each other instead of competing for attention.</p>
+    </section>
 
-<section class="scene purpose">
-  <div class="label">PURPOSE</div>
-  <h2>🌳 Purpose Tree</h2>
-  <div class="branches">
-    <span>Camp</span><span>Therapist</span><span>Speaker</span>
-    <span>Author</span><span>Builder</span>
+    <main class="layout">
+      <section class="garden-stage card">
+        <div class="stage-header">
+          <div>
+            <h2>Living Garden</h2>
+            <p class="soft">Each area grows as you save entries and move ideas into action.</p>
+          </div>
+          <select id="seasonSelect" aria-label="Current season">
+            <option value="Spring">Spring — What am I growing?</option>
+            <option value="Summer">Summer — What am I expanding?</option>
+            <option value="Fall">Fall — What am I harvesting?</option>
+            <option value="Winter">Winter — What am I releasing?</option>
+          </select>
+        </div>
+        <div class="garden-map" id="gardenMap"></div>
+      </section>
+
+      <section class="daily-card card" id="dailyCard">
+        <div class="stage-header">
+          <div>
+            <h2>Today’s Tending</h2>
+            <p class="soft">Answer 2–3 areas. Keep it honest, not perfect.</p>
+          </div>
+          <button id="newPromptBtn" class="secondary">New Prompts</button>
+        </div>
+        <div id="dailyPrompts" class="prompt-grid"></div>
+      </section>
+    </main>
+
+    <section class="workspace card">
+      <div class="stage-header">
+        <div>
+          <h2 id="activeTitle">Choose a garden area</h2>
+          <p id="activeQuestion" class="soft">Tap a plant to write, save, and watch it grow.</p>
+        </div>
+        <div class="growth-pill" id="activeGrowth">Seed</div>
+      </div>
+
+      <div class="entry-form">
+        <label for="entryType">Entry type</label>
+        <select id="entryType">
+          <option value="Reflection">Reflection</option>
+          <option value="Move">Move I will take</option>
+          <option value="Idea">Idea</option>
+          <option value="Win">Win</option>
+          <option value="Question">Question I’m living</option>
+          <option value="Risk">Risk / warning sign</option>
+        </select>
+
+        <label for="entryText">What wants to be captured?</label>
+        <textarea id="entryText" placeholder="Write here, then save it into your garden..."></textarea>
+
+        <button id="saveEntryBtn" class="primary">Save Entry</button>
+      </div>
+    </section>
+
+    <section class="entries card">
+      <div class="stage-header">
+        <div>
+          <h2>Saved Entries</h2>
+          <p class="soft">Your archive of light, moves, questions, decisions, and lessons.</p>
+        </div>
+        <select id="entryFilter" aria-label="Filter entries">
+          <option value="All">All areas</option>
+        </select>
+      </div>
+      <div id="entriesList" class="entries-list"></div>
+    </section>
   </div>
-</section>
 
-<section class="scene home">
-  <h2>🏡 Home</h2>
-  <p>What needs tending today?</p>
-</section>
-
-<section class="scene freedom">
-  <div class="label">FREEDOM</div>
-  <h2>🏔 Freedom Mountain</h2>
-  <ol>
-    <li>Amazon</li>
-    <li>School Decision</li>
-    <li>Camp Revenue</li>
-    <li>Corporate Exit</li>
-    <li>Financial Freedom</li>
-  </ol>
-</section>
-
-<section class="scene creation">
-  <div class="label">CREATE</div>
-  <h2>🌸 Creation Garden</h2>
-  <div class="flowers">
-    <span>🌻 Cookbook</span>
-    <span>🌹 Seasoned Light</span>
-    <span>🌷 Writing</span>
-    <span>🌸 Sewing</span>
+  <div class="modal-backdrop" id="promptModal" aria-hidden="true">
+    <div class="modal card">
+      <div class="stage-header">
+        <div>
+          <h2>Daily Arrival Prompt</h2>
+          <p class="soft">Choose what needs tending today.</p>
+        </div>
+        <button id="closeModalBtn" class="secondary">Close</button>
+      </div>
+      <div id="modalPrompts" class="prompt-grid"></div>
+    </div>
   </div>
-</section>
 
-<section class="scene tribe">
-  <h2>🤝 Tribe Paths</h2>
-</section>
-
-<section class="scene roots">
-  <h2>🌱 Self Roots</h2>
-</section>
-
-<section class="scene firepit">
-  <h2>🔥 Firepit</h2>
-  <ul>
-  <li>How do I leave corporate America intentionally?</li>
-  <li>What is the smallest profitable Camp?</li>
-  </ul>
-</section>
-<script src="app.js"></script>
-</body></html>
+  <script src="app.js"></script>
+</body>
+</html>

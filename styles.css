@@ -1,33 +1,16 @@
 
-body{
-background:#f7f3eb;
-font-family:Georgia,serif;
-margin:0;
-color:#352b3d;
-}
-.estate{
-position:relative;
-height:1400px;
-max-width:1100px;
-margin:auto;
-background:linear-gradient(#efe7ff,#f7f3eb 25%,#dfe8d7 75%,#cbd8c1);
-}
-.zone,.home,.firepit{
-position:absolute;
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(8px);
-border-radius:30px;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.legacy{top:40px;left:50%;transform:translateX(-50%);width:280px}
-.purpose{top:280px;left:40px;width:280px}
-.freedom{top:280px;right:40px;width:280px}
-.home{top:500px;left:50%;transform:translateX(-50%);width:260px;text-align:center}
-.creation{top:820px;left:40px;width:280px}
-.tribe{top:820px;right:40px;width:280px}
-.self{top:1080px;left:50%;transform:translateX(-50%);width:280px}
-.firepit{top:1260px;left:50%;transform:translateX(-50%);width:320px;text-align:center}
-h1{color:#6f4e8b}
-h2{margin:5px 0}
-ul{padding-left:18px}
+body{margin:0;background:#f7f3eb;color:#34293a;font-family:Georgia,serif}
+.sky{height:50vh;padding:60px;background:linear-gradient(#e8ddfb,#f7f3eb);text-align:center}
+h1{font-size:5rem;color:#6f4e8b;margin:0}
+.subtitle{font-style:italic}
+.scene{min-height:70vh;padding:60px 30px;position:relative}
+.label{position:absolute;top:20px;left:20px;font-size:4rem;opacity:.08;font-weight:bold;letter-spacing:.1em}
+.forest{background:linear-gradient(#f7f3eb,#eef4e7)}
+.purpose{background:#eef4e7}
+.home{background:#fffdf8;text-align:center}
+.freedom{background:linear-gradient(#fffdf8,#eef0fa)}
+.creation{background:#f9f1f7}
+.tribe{background:#eef4e7}
+.roots{background:#d9e3d1}
+.firepit{background:#efe7da}
+.branches span,.flowers span{display:inline-block;margin:10px;padding:12px 18px;background:white;border-radius:999px}

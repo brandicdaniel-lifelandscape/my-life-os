@@ -3,154 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Garden | Personal Life Operating System</title>
+  <title>The Garden | Life Operating System</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">Personal Life Operating System</p>
-      <h1>The Garden</h1>
-      <p class="tagline">Tend yourself. Tend your garden.</p>
-    </div>
-    <div class="top-actions">
-      <button id="seasonBtn">Change season</button>
-      <button id="resetBtn" class="ghost">Reset demo data</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero card">
+  <div class="app-shell">
+    <header class="hero">
       <div>
-        <p class="eyebrow">Core Principle</p>
-        <h2>Care for what matters without abandoning yourself.</h2>
-        <p class="hero-copy">The goal is not to become someone else. The goal is to reconnect with the brightest version of you and let that brightness expand into your work, relationships, wealth, creativity, and legacy.</p>
+        <p class="eyebrow">Personal Life Operating System</p>
+        <h1>The Garden</h1>
+        <p class="tagline">Tend yourself. Tend your garden.</p>
       </div>
-      <div class="season-orb">
-        <span id="seasonName">Summer</span>
-        <small id="seasonQuestion">What am I expanding?</small>
+      <div class="hero-actions">
+        <button id="dailyPromptBtn" class="primary">Today's Prompts</button>
+        <button id="exportBtn" class="secondary">Export Backup</button>
       </div>
+    </header>
+
+    <section class="north-star card">
+      <h2>North Star</h2>
+      <p>Help people reconnect with the brightest version of themselves while continuously reconnecting with my own.</p>
+      <p class="soft">A life where healing, creativity, community, wealth, and freedom reinforce each other instead of competing for attention.</p>
     </section>
 
-    <section class="grid two">
-      <article class="card north-star">
-        <p class="eyebrow">North Star</p>
-        <textarea data-key="northStar">To help people reconnect with the brightest version of themselves while continuously reconnecting with my own.</textarea>
-      </article>
-      <article class="card future-life">
-        <p class="eyebrow">10-Year Vision</p>
-        <textarea data-key="tenYearVision">Private therapy clients, multiple Camps, a successful cookbook, a continuing dinner party series, a thriving tribe, speaking engagements, financial freedom, additional homes, international travel, and time for sewing.</textarea>
-      </article>
-    </section>
-
-    <section class="garden-map card">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">The Living Areas</p>
-          <h2>Your Garden Map</h2>
-        </div>
-        <p class="hint">Tap a garden bed to open its notes.</p>
-      </div>
-      <div class="beds" id="beds"></div>
-    </section>
-
-    <section class="grid two">
-      <article class="card weekly">
-        <div class="section-head">
+    <main class="layout">
+      <section class="garden-stage card">
+        <div class="stage-header">
           <div>
-            <p class="eyebrow">Trail View</p>
-            <h2>This Week's Five Moves</h2>
+            <h2>Living Garden</h2>
+            <p class="soft">Each area grows as you save entries and move ideas into action.</p>
           </div>
-          <button id="addMove">+ Add move</button>
+          <select id="seasonSelect" aria-label="Current season">
+            <option value="Spring">Spring — What am I growing?</option>
+            <option value="Summer">Summer — What am I expanding?</option>
+            <option value="Fall">Fall — What am I harvesting?</option>
+            <option value="Winter">Winter — What am I releasing?</option>
+          </select>
         </div>
-        <div id="movesList" class="moves"></div>
-      </article>
+        <div class="garden-map" id="gardenMap"></div>
+      </section>
 
-      <article class="card alignment">
-        <p class="eyebrow">Compass</p>
-        <h2>Monthly Alignment</h2>
-        <p class="hint">Rate 1–10. The goal is alignment, not perfection.</p>
-        <div id="alignmentList"></div>
-      </article>
+      <section class="daily-card card" id="dailyCard">
+        <div class="stage-header">
+          <div>
+            <h2>Today’s Tending</h2>
+            <p class="soft">Answer 2–3 areas. Keep it honest, not perfect.</p>
+          </div>
+          <button id="newPromptBtn" class="secondary">New Prompts</button>
+        </div>
+        <div id="dailyPrompts" class="prompt-grid"></div>
+      </section>
+    </main>
+
+    <section class="workspace card">
+      <div class="stage-header">
+        <div>
+          <h2 id="activeTitle">Choose a garden area</h2>
+          <p id="activeQuestion" class="soft">Tap a plant to write, save, and watch it grow.</p>
+        </div>
+        <div class="growth-pill" id="activeGrowth">Seed</div>
+      </div>
+
+      <div class="entry-form">
+        <label for="entryType">Entry type</label>
+        <select id="entryType">
+          <option value="Reflection">Reflection</option>
+          <option value="Move">Move I will take</option>
+          <option value="Idea">Idea</option>
+          <option value="Win">Win</option>
+          <option value="Question">Question I’m living</option>
+          <option value="Risk">Risk / warning sign</option>
+        </select>
+
+        <label for="entryText">What wants to be captured?</label>
+        <textarea id="entryText" placeholder="Write here, then save it into your garden..."></textarea>
+
+        <button id="saveEntryBtn" class="primary">Save Entry</button>
+      </div>
     </section>
 
-    <section class="grid three">
-      <article class="card risk">
-        <p class="eyebrow">Risk #1</p>
-        <h3>Dreaming Without Building</h3>
-        <p>Warning sign: talking, researching, or refining without shipping.</p>
-        <label>Weekly question</label>
-        <textarea data-key="risk1">What did I actually create this week?</textarea>
-      </article>
-      <article class="card risk">
-        <p class="eyebrow">Risk #2</p>
-        <h3>Luxury Before Sustainability</h3>
-        <p>Warning sign: making the experience more beautiful than financially viable.</p>
-        <label>Weekly question</label>
-        <textarea data-key="risk2">What is the simplest version that still feels aligned?</textarea>
-      </article>
-      <article class="card risk">
-        <p class="eyebrow">Risk #3</p>
-        <h3>One Garden Bed Obsession</h3>
-        <p>Warning sign: one area gets all the water while other real priorities dry out.</p>
-        <label>Weekly question</label>
-        <textarea data-key="risk3">What important area has received no attention lately?</textarea>
-      </article>
+    <section class="entries card">
+      <div class="stage-header">
+        <div>
+          <h2>Saved Entries</h2>
+          <p class="soft">Your archive of light, moves, questions, decisions, and lessons.</p>
+        </div>
+        <select id="entryFilter" aria-label="Filter entries">
+          <option value="All">All areas</option>
+        </select>
+      </div>
+      <div id="entriesList" class="entries-list"></div>
     </section>
+  </div>
 
-    <section class="grid two">
-      <article class="card light-page">
-        <p class="eyebrow">The Light</p>
-        <h2>Weekly Light Check</h2>
-        <label>What gave me light?</label>
-        <textarea data-key="gaveLight">Meaningful conversations, hosting, building Camp, learning, travel, cooking, sewing.</textarea>
-        <label>What dimmed my light?</label>
-        <textarea data-key="dimmedLight">Overwork, urgency, misaligned obligations, trying to prove instead of create.</textarea>
-        <label>What wants more light?</label>
-        <textarea data-key="moreLight">The parts of my life that connect people in person and support people in private.</textarea>
-      </article>
-
-      <article class="card questions">
-        <p class="eyebrow">Permanent Page</p>
-        <h2>Questions I'm Living</h2>
-        <div id="questionsList"></div>
-        <button id="addQuestion">+ Add question</button>
-      </article>
-    </section>
-
-    <section class="grid two">
-      <article class="card lessons">
-        <p class="eyebrow">Future TED Talk / Book Seeds</p>
-        <h2>Lessons From The Garden</h2>
-        <textarea data-key="lessons">How to tend your garden without abandoning yourself. Add lessons here as they become true through lived experience.</textarea>
-      </article>
-      <article class="card decision">
-        <p class="eyebrow">Decision Filter</p>
-        <h2>Before I Say Yes</h2>
-        <ul>
-          <li>Does this increase purpose?</li>
-          <li>Does this increase freedom?</li>
-          <li>Does this protect health?</li>
-          <li>Does this deepen connection?</li>
-          <li>Does this create joy?</li>
-          <li>Does this build wealth without status obsession?</li>
-        </ul>
-        <textarea data-key="decisionNotes">Use this space to score major choices: jobs, schools, investments, retreats, relationships, speaking opportunities.</textarea>
-      </article>
-    </section>
-  </main>
-
-  <dialog id="bedDialog">
-    <form method="dialog" class="modal">
-      <button class="close" value="cancel">×</button>
-      <p class="eyebrow" id="modalEyebrow">Garden Bed</p>
-      <h2 id="modalTitle"></h2>
-      <p id="modalQuestion" class="modal-question"></p>
-      <textarea id="modalNotes"></textarea>
-      <button id="saveBed" type="button">Save entry</button>
-      <div id="modalEntries" class="saved-entries"></div>
-    </form>
-  </dialog>
+  <div class="modal-backdrop" id="promptModal" aria-hidden="true">
+    <div class="modal card">
+      <div class="stage-header">
+        <div>
+          <h2>Daily Arrival Prompt</h2>
+          <p class="soft">Choose what needs tending today.</p>
+        </div>
+        <button id="closeModalBtn" class="secondary">Close</button>
+      </div>
+      <div id="modalPrompts" class="prompt-grid"></div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
